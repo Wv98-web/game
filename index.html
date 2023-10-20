@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hidream Games</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <!--懒加载-->
+    <!--必要样式-->
+    <link rel="stylesheet" type="text/css" href="css/component.css" />
+    <script src="js/jquery.min.js"></script>
+    <script src="js/modernizr.custom.js"></script>
+    <!--懒加载-->
+    <script>
+        window.hs = window.hs || {};
+        try {
+            window.hs.games = [];
+            window.hs.currentGames = [];
+            window.hs.currentGame = {};
+            window.hs.currentGameRelated = [];
+        } catch (error) {
+
+        }
+    </script>
+    <script src="js/main.js"></script>
+</head>
+
+<body>
+    <!--header-->
+    <div id="header" class="fix-nav">
+        <div class="warper">
+            <div class="logo"><a href="index.html"><img src="images/logo.png" alt="Play Best Free Online Games"></a>
+            </div>
+            <!--meau-->
+            <div class="menu">
+                <ul>
+                    <li><a href="index.html?list=3D"><i class="cate"></i><span>3D</span></a></li>
+                    <li><a href="index.html?list=Sports"><i class="best"></i><span>Sports</span></a></li>
+                    <li><a href="index.html?list=Puzzle"><i class="featur"></i><span>Puzzle</span></a></li>
+                    <li class="sousuo"><a href="javascript:void(0)"><i class="search"></i><span>Search</span></a>
+                        <div class="sousuo_con"><input type="text" class="txt" placeholder="Search games..."><input
+                                class="btn" type="submit" value="GO"></div>
+                    </li>
+                </ul>
+            </div>
+            <!--meau-->
+
+        </div>
+    </div>
+    <!--header-->
+    <!--tup-->
+    <div>
+        <div class="load-more" style="display: none; padding-top: 90px;">
+            <div>
+                <div class="loader-13"></div>
+            </div>
+        </div>
+        <ul class="grid effect-3" id="grid">
+            <!-- <li><a href="games_del.html"><img src="images/1.jpg">
+                    <p>Floppy Pipe</p><span class="hot"></span>
+                </a></li> -->
+        </ul>
+    </div>
+    <script>
+        $(window).on('load', function () {
+            var tup = ``;
+            $('.load-more').show();
+            $.getJSON('./database/game_list.json', function (res) {
+                window.hs.games = res;
+                if (isHasParam()) {
+                    var list = getParameterByName('list')
+                    res.filter((t, index) => t.tags.indexOf(list) !== -1).map((item, index) => {
+                        if (index < 200) {
+                            tup += GameCard(item)
+                        }
+                    })
+                } else {
+                    res.filter((t, index) => index < 200).map(item => {
+                        tup += GameCard(item)
+                    })
+                }
+                $('#grid').append(tup);
+                setTimeout(function () {
+                    new AnimOnScroll(document.getElementById('grid'), {
+                        minDuration: 0.4,
+                        maxDuration: 0.7,
+                        viewportFactor: 0.2
+                    });
+                }, 1000)
+            })
+        });
+
+        function getParameterByName(name, url) {
+            if (!url) {
+                url = window.location.href;
+            }
+            name = name.replace(/[[\]]/g, '\\$&');
+            var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+                results = regex.exec(url);
+            if (!results) {
+                return null;
+            }
+            if (!results[2]) {
+                return '';
+            }
+            return decodeURIComponent(results[2].replace(/\+/g, ' '));
+        }
+
+        function isHasParam() {
+            // 获取当前URL
+            var href = window.location.href;
+            var pathname = window.location.pathname;
+            if (pathname == '/index.html') {
+                // 检查URL是否包含'game'参数
+                if (href.indexOf('list=') !== -1) {
+                    return true; // 如果包含，返回true
+                } else {
+                    return false; // 如果不包含，返回false
+                }
+            } else if (pathname == '/game_del.html') {
+                if (href.indexOf('game=') !== -1) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+        }
+
+        function GameCard(item) {
+            return `<li><a href="javascript:void(0)" onClick="handleGameDetail(this)" data-id="${item.id}"><img src="${item.thumb}"><p>${item.title}</p></a></li>`
+        }
+
+        function handleGameDetail(gamecard) {
+            var gameid = $(gamecard).data('id');
+            var gamedata = window.hs.games && window.hs.games.length > 0 ? window.hs.games.find(obj => obj.id == gameid) : {};
+            // ${'games_del.html?game=' + item.title.replace(/ /g, '_')}
+            localStorage.setItem('currentGame', JSON.stringify(gamedata))
+            window.location.href = `games_del.html?game=${gamedata.title.replace(/ /g, '_')}`
+        }
+    </script>
+    <script src="js/masonry.pkgd.min.js"></script>
+    <script src="js/imagesloaded.js"></script>
+    <script src="js/classie.js"></script>
+    <script src="js/AnimOnScroll.js"></script>
+    <!-- <script>
+        new AnimOnScroll(document.getElementById('grid'), {
+            minDuration: 0.4,
+            maxDuration: 0.7,
+            viewportFactor: 0.2
+        });
+    </script> -->
+    <!--tup-->
+    <!--foot-->
+    <div class="foot">
+        <div class="contant">
+            <p>
+                annegames Games is definitely your number one resource of free online games which includes funny games,
+                girl games, boy games, dress-up games, HTML5 games, internet games, racing games, shooting games, RPG
+                games, MMO games, and a lot more. We now have more than 1000 fun web games that you can play in your
+                browser directly. If you would like all the pleasure of a classic pc game without the download trouble,
+                then you'll completely love playing games online. Feel familiar casual video games with no downloads
+                needed, solely connect and play, and don't be troubled, all of these games are absolutely free. Whatever
+                game you are searching for, we've got it here.
+                This is actually the best spot on the web to play games without cost! Thousands of options from the best
+                developers around, such as Kiz10.com Vseigru.net, Igroutka.net, Lagged.com, Minijuegos.com, Y8.com,
+                Miniclip.com and GameMonetize.com. If you're ready to begin playing right now, just simply select your
+                preferred game and click to relax and play. We add brand new games on a daily basis so you will rarely
+                become bored at here, enjoy! On annegames there isn't any annoying advertisement or POPUP.<br />
+                Embed Your Favorite Games: Add every game on Game Free to your Blog, Website, Facebook page so you can
+                play on your personal web site and provide addicting games to your customers! Just copy and paste the
+                code on game page. </p>
+        </div>
+    </div>
+
+    <div class="foot_nav">
+        <!--left-->
+        <div class="left">
+            <ul>
+                <li><a href="">Contact</a></li>
+                <li>|</li>
+                <li><a href="about us.html">About Us</a></li>
+                <li>|</li>
+                <li><a href="">Free Games On Line</a></li>
+            </ul>
+        </div>
+        <!--center-->
+        <div class="center"><a href="">Random Game</a></div>
+        <!--right-->
+        <div class="right">
+            <ul>
+                <li><a href="terms.html">Terms</a></li>
+                <li>|</li>
+                <li><a href="Privacy.html">Privacy</a></li>
+                <li>|</li>
+                <li>annegames.com © 2021</li>
+            </ul>
+        </div>
+        <!--right-->
+    </div>
+    <!--foot-->
+</body>
+
+</html>

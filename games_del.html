@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=1.0 user-scalable=no">
+  <title>games_del</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
+  <script src="js/jquery.min.js"></script>
+  <script>
+    window.hs = window.hs || {};
+    try {
+      window.hs.games = [];
+      window.hs.currentGames = [];
+      window.hs.currentGame = {};
+      window.hs.currentGameRelated = [];
+    } catch (error) {
+
+    }
+  </script>
+  <!-- <script src="js/main.js"></script> -->
+
+  <script>
+    try {
+      var game = localStorage.getItem('currentGame') ? JSON.parse(localStorage.getItem('currentGame')) : null;
+      if (game) {
+        console.log(game)
+        $.getJSON('./database/game_list.json', function (res) {
+          steer(game, res)
+        });
+      } else {
+        console.log('404')
+      }
+    } catch (error) {
+
+    }
+  </script>
+</head>
+
+<body>
+  <!--header-->
+  <div id="header" class="fix-nav">
+    <div class="warper">
+      <div class="logo"><a href="index.html"><img src="images/logo.png" alt="Play Best Free Online Games"></a>
+      </div>
+      <!--meau-->
+      <div class="menu">
+        <ul>
+          <li><a href="index.html?list=3D"><i class="cate"></i><span>3D</span></a></li>
+          <li><a href="index.html?list=Sports"><i class="best"></i><span>Sports</span></a></li>
+          <li><a href="index.html?list=Puzzle"><i class="featur"></i><span>Puzzle</span></a></li>
+          <li class="sousuo"><a href="javascript:void(0)"><i class="search"></i><span>Search</span></a>
+            <div class="sousuo_con"><input type="text" class="txt" placeholder="Search games..."><input class="btn"
+                type="submit" value="GO"></div>
+          </li>
+        </ul>
+      </div>
+      <!--meau-->
+
+    </div>
+  </div>
+  <!--header-->
+  <!--games-->
+  <div class="games">
+    <div class="games_con">
+      <!--yi-->
+      <div class="games_con_1"><a href=""><img src="images/games01.jpg"></a></div>
+      <!--yi-->
+      <div class="games_con_2">
+        <!--zuo-->
+        <!--<div class="games_con_2_left"><a href=""><img src="images/games02.jpg"></a></div>-->
+        <!--zhong-->
+        <div class="g_delblock">
+          <!--开始-->
+          <div class="lcon">
+            <div class="changpic">
+              <img src="images/games02.jpg" alt="">
+            </div>
+          </div>
+          <!--jieshu-->
+          <div class="lcon_1">
+            <p>Similar Games</p>
+            <ul>
+              <li><a href=""><img src="images/1.jpg">
+                  <p>Floppy Pipe</p>
+                </a></li>
+              <li><a href=""><img src="images/1.jpg">
+                  <p>Floppy Pipe</p>
+                </a></li>
+              <li><a href=""><img src="images/1.jpg">
+                  <p>Floppy Pipe</p>
+                </a></li>
+              <li><a href=""><img src="images/1.jpg">
+                  <p>Floppy Pipe</p>
+                </a></li>
+              <li><a href=""><img src="images/1.jpg">
+                  <p>Floppy Pipe</p>
+                </a></li>
+              <li><a href=""><img src="images/1.jpg">
+                  <p>Floppy Pipe</p>
+                </a></li>
+            </ul>
+          </div>
+          <!--jieshu-->
+
+          <div class="box-sidebar">
+            <div class="btn-escfull" action="game"><i></i><span></span></div>
+            <div class="btn-video"><span></span></div>
+          </div>
+          <div class="g_delwarnr">
+            <!--kaishi-->
+            <div class="gametitle fn-clear">
+              <div class="l-link">
+                <a class="home" href="/"></a>
+                <a class="back" href="javascript:history.back(); "></a>
+              </div>
+              <h1 class="gamename fn-left" title="Airplane Fight"><i class="flag"></i><span>Airplane Fight</span></h1>
+              <div class="game-share fn-right">
+                <div class="game-zoom">
+                  <!--<a href="#" id="gameFull" title="Play game fullscreen" onclick="GameFullscreen();return false;"></a>-->
+                  <a href="#" id="gameReplay" title="Replay this game" onclick="ReplayGame();return false;"></a>
+                </div>
+                <div class="social"></div>
+              </div>
+            </div>
+            <!--jieshu-->
+
+            <div class="game_mask">
+              <div class="game_container">
+                <img src="images/games03.jpg" alt="" class="game_bgpic">
+                <img src="images/games03.jpg" alt="" class="front-icon">
+                <div class="front-button">
+                  <span class="front-button-inner">Play Now</span>
+                </div>
+                <div class="gamePlay-title">Airplane Fight</div>
+              </div>
+
+            </div>
+            <div class="game_play">
+              <div class="changpic">
+                <img src="images/game_spic.jpg" alt="">
+              </div>
+            </div>
+          </div>
+          <!--<div class="g_botcom">
+					<ul>
+						<li><a href="">
+							<img src="images/girls.jpg" alt="">
+						</a></li>
+						<li><a href="">
+							<img src="images/girls.jpg" alt="">
+						</a></li>
+						<li><a href="">
+							<img src="images/girls.jpg" alt="">
+						</a></li>
+						<li><a href="">
+							<img src="images/girls.jpg" alt="">
+						</a></li>
+						<li><a href="">
+							<img src="images/girls.jpg" alt="">
+						</a></li>
+					</ul>
+				</div>-->
+
+          <!--jieshu-->
+          <div class="lcon_1">
+            <p>Similar Games</p>
+            <ul>
+              <li><a href=""><img src="images/1.jpg">
+                  <p>Floppy Pipe</p>
+                </a></li>
+              <li><a href=""><img src="images/1.jpg">
+                  <p>Floppy Pipe</p>
+                </a></li>
+              <li><a href=""><img src="images/1.jpg">
+                  <p>Floppy Pipe</p>
+                </a></li>
+              <li><a href=""><img src="images/1.jpg">
+                  <p>Floppy Pipe</p>
+                </a></li>
+              <li><a href=""><img src="images/1.jpg">
+                  <p>Floppy Pipe</p>
+                </a></li>
+              <li><a href=""><img src="images/1.jpg">
+                  <p>Floppy Pipe</p>
+                </a></li>
+            </ul>
+          </div>
+          <!--jieshu-->
+          <div class="rcon">
+            <div class="changpic">
+              <img src="images/games02.jpg" alt="">
+            </div>
+          </div>
+        </div>
+        <!--right-->
+
+        <!--right-->
+      </div>
+      <!--er-->
+    </div>
+    <!--kaishi-->
+    <div class="warper">
+      <div class="games_con_3">
+        <!--left-->
+        <div class="games_con_3_left">
+          <div class="games_con_3_left_1">
+            <div class="tup"><img src="images/1.jpg"></div>
+            <div class="wenzi">Rocket Clash 3D</div>
+            <p>Lead the resistance squad of special forces opposed to attempts of enemy intelligence agents to establish
+              control over the missile base. In this battle you’ll harness the power of a tactical shortened version of
+              the famous AK and a secret weapon hidden in the depths of the level. Be wary of acid pools of toxic rocket
+              fuel and explore the network of underground tunnels.</p>
+          </div>
+        </div>
+        <!--left-->
+        <div class="games_con_3_right">
+          <p>Advertisement</p>
+        </div>
+        <!--right-->
+      </div>
+    </div>
+    <!--jiehsu-->
+    <div class="warper">
+      <div class="games_con_4">
+        <h2>Similar Games</h2>
+        <ul>
+          <li><a href=""><img src="images/1.jpg">
+              <p>Floppy Pipe</p>
+            </a></li>
+          <li><a href=""><img src="images/1.jpg">
+              <p>Floppy Pipe</p>
+            </a></li>
+          <li><a href=""><img src="images/1.jpg">
+              <p>Floppy Pipe</p>
+            </a></li>
+          <li><a href=""><img src="images/1.jpg">
+              <p>Floppy Pipe</p>
+            </a></li>
+          <li><a href=""><img src="images/1.jpg">
+              <p>Floppy Pipe</p>
+            </a></li>
+          <li><a href=""><img src="images/1.jpg">
+              <p>Floppy Pipe</p>
+            </a></li>
+          <li><a href=""><img src="images/1.jpg">
+              <p>Floppy Pipe</p>
+            </a></li>
+          <li><a href=""><img src="images/1.jpg">
+              <p>Floppy Pipe</p>
+            </a></li>
+          <li><a href=""><img src="images/1.jpg">
+              <p>Floppy Pipe</p>
+            </a></li>
+          <li><a href=""><img src="images/1.jpg">
+              <p>Floppy Pipe</p>
+            </a></li>
+          <li><a href=""><img src="images/1.jpg">
+              <p>Floppy Pipe</p>
+            </a></li>
+          <li><a href=""><img src="images/1.jpg">
+              <p>Floppy Pipe</p>
+            </a></li>
+          <li><a href=""><img src="images/1.jpg">
+              <p>Floppy Pipe</p>
+            </a></li>
+          <li><a href=""><img src="images/1.jpg">
+              <p>Floppy Pipe</p>
+            </a></li>
+          <li><a href=""><img src="images/1.jpg">
+              <p>Floppy Pipe</p>
+            </a></li>
+          <li><a href=""><img src="images/1.jpg">
+              <p>Floppy Pipe</p>
+            </a></li>
+          <li><a href=""><img src="images/1.jpg">
+              <p>Floppy Pipe</p>
+            </a></li>
+          <li><a href=""><img src="images/1.jpg">
+              <p>Floppy Pipe</p>
+            </a></li>
+          <li><a href=""><img src="images/1.jpg">
+              <p>Floppy Pipe</p>
+            </a></li>
+          <li><a href=""><img src="images/1.jpg">
+              <p>Floppy Pipe</p>
+            </a></li>
+          <li><a href=""><img src="images/1.jpg">
+              <p>Floppy Pipe</p>
+            </a></li>
+          <li><a href=""><img src="images/1.jpg">
+              <p>Floppy Pipe</p>
+            </a></li>
+          <li><a href=""><img src="images/1.jpg">
+              <p>Floppy Pipe</p>
+            </a></li>
+          <li><a href=""><img src="images/1.jpg">
+              <p>Floppy Pipe</p>
+            </a></li>
+          <li><a href=""><img src="images/1.jpg">
+              <p>Floppy Pipe</p>
+            </a></li>
+          <li><a href=""><img src="images/1.jpg">
+              <p>Floppy Pipe</p>
+            </a></li>
+          <li><a href=""><img src="images/1.jpg">
+              <p>Floppy Pipe</p>
+            </a></li>
+          <li><a href=""><img src="images/1.jpg">
+              <p>Floppy Pipe</p>
+            </a></li>
+        </ul>
+      </div>
+    </div>
+    <!--jieshu-->
+    <script>
+      function steer(orginObj, orginList) {
+        var list = [];
+        try {
+          var obj = {};
+          var tags = orginObj && typeof (orginObj.tags) === 'string' ? orginObj.tags.replace(/\s/g, "").split(',') : '';
+          tags.forEach(item => {
+            if (!obj.hasOwnProperty(item)) {
+              obj[item] = true;
+            }
+          })
+          if (orginList instanceof Array) {
+            list = orginList.filter(item => item.id != orginObj.id);
+          }
+          list.forEach(item => {
+            if (item && typeof (item.tags) === 'string') {
+              let tagArr = item.tags.replace(/\s/g, "").split(',');
+              let len = 0;
+
+              tagArr.forEach(subItem => {
+                if (obj.hasOwnProperty(subItem)) {
+                  ++len;
+                }
+              })
+              item.tagLen = len
+            }
+          })
+          list.sort(function (a, b) {
+            if (a && b) {
+              return b.tagLen - a.tagLen
+            }
+            return true;
+          })
+        } catch (error) { }
+        console.log(list, 'steer')
+        return list;
+      }
+    </script>
+  </div>
+  <!--games-->
+
+  <!--bottom-->
+  <div class="foot_nav">
+    <!--left-->
+    <div class="left">
+      <ul>
+        <li><a href="">Contact</a></li>
+        <li>|</li>
+        <li><a href="about us.html">About Us</a></li>
+        <li>|</li>
+        <li><a href="">Free Games On Line</a></li>
+      </ul>
+    </div>
+    <!--center-->
+    <div class="center"><a href="">Random Game</a></div>
+    <!--right-->
+    <div class="right">
+      <ul>
+        <li><a href="terms.html">Terms</a></li>
+        <li>|</li>
+        <li><a href="Privacy.html">Privacy</a></li>
+        <li>|</li>
+        <li>annegames.com © 2021</li>
+      </ul>
+    </div>
+    <!--right-->
+  </div>
+  <!--foot-->
+
+</body>
+
+</html>
