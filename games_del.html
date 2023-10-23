@@ -19,22 +19,6 @@
     }
   </script>
   <!-- <script src="js/main.js"></script> -->
-
-  <script>
-    try {
-      var game = localStorage.getItem('currentGame') ? JSON.parse(localStorage.getItem('currentGame')) : null;
-      if (game) {
-        console.log(game)
-        $.getJSON('./database/game_list.json', function (res) {
-          steer(game, res)
-        });
-      } else {
-        console.log('404')
-      }
-    } catch (error) {
-
-    }
-  </script>
 </head>
 
 <body>
@@ -49,10 +33,10 @@
           <li><a href="index.html?list=3D"><i class="cate"></i><span>3D</span></a></li>
           <li><a href="index.html?list=Sports"><i class="best"></i><span>Sports</span></a></li>
           <li><a href="index.html?list=Puzzle"><i class="featur"></i><span>Puzzle</span></a></li>
-          <li class="sousuo"><a href="javascript:void(0)"><i class="search"></i><span>Search</span></a>
+          <!-- <li class="sousuo"><a href="javascript:void(0)"><i class="search"></i><span>Search</span></a>
             <div class="sousuo_con"><input type="text" class="txt" placeholder="Search games..."><input class="btn"
                 type="submit" value="GO"></div>
-          </li>
+          </li> -->
         </ul>
       </div>
       <!--meau-->
@@ -77,31 +61,6 @@
               <img src="images/games02.jpg" alt="">
             </div>
           </div>
-          <!--jieshu-->
-          <div class="lcon_1">
-            <p>Similar Games</p>
-            <ul>
-              <li><a href=""><img src="images/1.jpg">
-                  <p>Floppy Pipe</p>
-                </a></li>
-              <li><a href=""><img src="images/1.jpg">
-                  <p>Floppy Pipe</p>
-                </a></li>
-              <li><a href=""><img src="images/1.jpg">
-                  <p>Floppy Pipe</p>
-                </a></li>
-              <li><a href=""><img src="images/1.jpg">
-                  <p>Floppy Pipe</p>
-                </a></li>
-              <li><a href=""><img src="images/1.jpg">
-                  <p>Floppy Pipe</p>
-                </a></li>
-              <li><a href=""><img src="images/1.jpg">
-                  <p>Floppy Pipe</p>
-                </a></li>
-            </ul>
-          </div>
-          <!--jieshu-->
 
           <div class="box-sidebar">
             <div class="btn-escfull" action="game"><i></i><span></span></div>
@@ -114,7 +73,7 @@
                 <a class="home" href="/"></a>
                 <a class="back" href="javascript:history.back(); "></a>
               </div>
-              <h1 class="gamename fn-left" title="Airplane Fight"><i class="flag"></i><span>Airplane Fight</span></h1>
+              <!-- <h1 class="gamename fn-left" title="Airplane Fight"><i class="flag"></i><span>Airplane Fight</span></h1> -->
               <div class="game-share fn-right">
                 <div class="game-zoom">
                   <!--<a href="#" id="gameFull" title="Play game fullscreen" onclick="GameFullscreen();return false;"></a>-->
@@ -126,14 +85,7 @@
             <!--jieshu-->
 
             <div class="game_mask">
-              <div class="game_container">
-                <img src="images/games03.jpg" alt="" class="game_bgpic">
-                <img src="images/games03.jpg" alt="" class="front-icon">
-                <div class="front-button">
-                  <span class="front-button-inner">Play Now</span>
-                </div>
-                <div class="gamePlay-title">Airplane Fight</div>
-              </div>
+              <div class="game_container"></div>
 
             </div>
             <div class="game_play">
@@ -162,31 +114,6 @@
 					</ul>
 				</div>-->
 
-          <!--jieshu-->
-          <div class="lcon_1">
-            <p>Similar Games</p>
-            <ul>
-              <li><a href=""><img src="images/1.jpg">
-                  <p>Floppy Pipe</p>
-                </a></li>
-              <li><a href=""><img src="images/1.jpg">
-                  <p>Floppy Pipe</p>
-                </a></li>
-              <li><a href=""><img src="images/1.jpg">
-                  <p>Floppy Pipe</p>
-                </a></li>
-              <li><a href=""><img src="images/1.jpg">
-                  <p>Floppy Pipe</p>
-                </a></li>
-              <li><a href=""><img src="images/1.jpg">
-                  <p>Floppy Pipe</p>
-                </a></li>
-              <li><a href=""><img src="images/1.jpg">
-                  <p>Floppy Pipe</p>
-                </a></li>
-            </ul>
-          </div>
-          <!--jieshu-->
           <div class="rcon">
             <div class="changpic">
               <img src="images/games02.jpg" alt="">
@@ -203,20 +130,11 @@
     <div class="warper">
       <div class="games_con_3">
         <!--left-->
-        <div class="games_con_3_left">
-          <div class="games_con_3_left_1">
-            <div class="tup"><img src="images/1.jpg"></div>
-            <div class="wenzi">Rocket Clash 3D</div>
-            <p>Lead the resistance squad of special forces opposed to attempts of enemy intelligence agents to establish
-              control over the missile base. In this battle you’ll harness the power of a tactical shortened version of
-              the famous AK and a secret weapon hidden in the depths of the level. Be wary of acid pools of toxic rocket
-              fuel and explore the network of underground tunnels.</p>
-          </div>
-        </div>
+        <div class="games_con_3_left"></div>
         <!--left-->
-        <div class="games_con_3_right">
+        <!-- <div class="games_con_3_right">
           <p>Advertisement</p>
-        </div>
+        </div> -->
         <!--right-->
       </div>
     </div>
@@ -224,133 +142,10 @@
     <div class="warper">
       <div class="games_con_4">
         <h2>Similar Games</h2>
-        <ul>
-          <li><a href=""><img src="images/1.jpg">
-              <p>Floppy Pipe</p>
-            </a></li>
-          <li><a href=""><img src="images/1.jpg">
-              <p>Floppy Pipe</p>
-            </a></li>
-          <li><a href=""><img src="images/1.jpg">
-              <p>Floppy Pipe</p>
-            </a></li>
-          <li><a href=""><img src="images/1.jpg">
-              <p>Floppy Pipe</p>
-            </a></li>
-          <li><a href=""><img src="images/1.jpg">
-              <p>Floppy Pipe</p>
-            </a></li>
-          <li><a href=""><img src="images/1.jpg">
-              <p>Floppy Pipe</p>
-            </a></li>
-          <li><a href=""><img src="images/1.jpg">
-              <p>Floppy Pipe</p>
-            </a></li>
-          <li><a href=""><img src="images/1.jpg">
-              <p>Floppy Pipe</p>
-            </a></li>
-          <li><a href=""><img src="images/1.jpg">
-              <p>Floppy Pipe</p>
-            </a></li>
-          <li><a href=""><img src="images/1.jpg">
-              <p>Floppy Pipe</p>
-            </a></li>
-          <li><a href=""><img src="images/1.jpg">
-              <p>Floppy Pipe</p>
-            </a></li>
-          <li><a href=""><img src="images/1.jpg">
-              <p>Floppy Pipe</p>
-            </a></li>
-          <li><a href=""><img src="images/1.jpg">
-              <p>Floppy Pipe</p>
-            </a></li>
-          <li><a href=""><img src="images/1.jpg">
-              <p>Floppy Pipe</p>
-            </a></li>
-          <li><a href=""><img src="images/1.jpg">
-              <p>Floppy Pipe</p>
-            </a></li>
-          <li><a href=""><img src="images/1.jpg">
-              <p>Floppy Pipe</p>
-            </a></li>
-          <li><a href=""><img src="images/1.jpg">
-              <p>Floppy Pipe</p>
-            </a></li>
-          <li><a href=""><img src="images/1.jpg">
-              <p>Floppy Pipe</p>
-            </a></li>
-          <li><a href=""><img src="images/1.jpg">
-              <p>Floppy Pipe</p>
-            </a></li>
-          <li><a href=""><img src="images/1.jpg">
-              <p>Floppy Pipe</p>
-            </a></li>
-          <li><a href=""><img src="images/1.jpg">
-              <p>Floppy Pipe</p>
-            </a></li>
-          <li><a href=""><img src="images/1.jpg">
-              <p>Floppy Pipe</p>
-            </a></li>
-          <li><a href=""><img src="images/1.jpg">
-              <p>Floppy Pipe</p>
-            </a></li>
-          <li><a href=""><img src="images/1.jpg">
-              <p>Floppy Pipe</p>
-            </a></li>
-          <li><a href=""><img src="images/1.jpg">
-              <p>Floppy Pipe</p>
-            </a></li>
-          <li><a href=""><img src="images/1.jpg">
-              <p>Floppy Pipe</p>
-            </a></li>
-          <li><a href=""><img src="images/1.jpg">
-              <p>Floppy Pipe</p>
-            </a></li>
-          <li><a href=""><img src="images/1.jpg">
-              <p>Floppy Pipe</p>
-            </a></li>
-        </ul>
+        <ul class="similar_list"></ul>
       </div>
     </div>
     <!--jieshu-->
-    <script>
-      function steer(orginObj, orginList) {
-        var list = [];
-        try {
-          var obj = {};
-          var tags = orginObj && typeof (orginObj.tags) === 'string' ? orginObj.tags.replace(/\s/g, "").split(',') : '';
-          tags.forEach(item => {
-            if (!obj.hasOwnProperty(item)) {
-              obj[item] = true;
-            }
-          })
-          if (orginList instanceof Array) {
-            list = orginList.filter(item => item.id != orginObj.id);
-          }
-          list.forEach(item => {
-            if (item && typeof (item.tags) === 'string') {
-              let tagArr = item.tags.replace(/\s/g, "").split(',');
-              let len = 0;
-
-              tagArr.forEach(subItem => {
-                if (obj.hasOwnProperty(subItem)) {
-                  ++len;
-                }
-              })
-              item.tagLen = len
-            }
-          })
-          list.sort(function (a, b) {
-            if (a && b) {
-              return b.tagLen - a.tagLen
-            }
-            return true;
-          })
-        } catch (error) { }
-        console.log(list, 'steer')
-        return list;
-      }
-    </script>
   </div>
   <!--games-->
 
@@ -383,5 +178,84 @@
   <!--foot-->
 
 </body>
+
+<script>
+  try {
+    var game = localStorage.getItem('currentGame') ? JSON.parse(localStorage.getItem('currentGame')) : null;
+    if (game) {
+      console.log(game)
+      $('.l-link').after(`<h1 class="gamename fn-left" title="${game.title}"><i class="flag"></i><span>${game.title}</span></h1>`)
+      var game_html = `<iframe src="${game.url}" width="100%" height="100%" scrolling="none" frameborder="0"></iframe>`;
+      $('.game_container').append(game_html);
+      $('.games_con_3_left').append(`<div class="games_con_3_left_1">
+            <div class="tup"><img src="${game.thumb}"></div>
+            <div class="wenzi">${game.title}</div>
+            <p>${game.description}</p>
+          </div>`)
+
+      $.getJSON('./database/game_list.json', function (res) {
+        window.hs.games = res;
+        var list = steer(game, res.filter((item, index) => index < 50))
+        var similar_list = ``
+        list.map((item, index) => {
+          if (index >= 28) return
+          similar_list += `<li><a href="javascript:void(0)" onClick="handleGameDetail(this)" data-id="${item.id}"><img src="${item.thumb}"><p>${item.title}</p></a></li>`
+        })
+
+        $('ul.similar_list').append(similar_list)
+      });
+    } else {
+      console.log('404')
+    }
+  } catch (error) {
+
+  }
+</script>
+<script>
+  function handleGameDetail(gamecard) {
+    var gameid = $(gamecard).data('id');
+    var gamedata = window.hs.games && window.hs.games.length > 0 ? window.hs.games.find(obj => obj.id == gameid) : {};
+    // ${'games_del.html?game=' + item.title.replace(/ /g, '_')}
+    localStorage.setItem('currentGame', JSON.stringify(gamedata))
+    window.location.href = `games_del.html?game=${gamedata.title.replace(/ /g, '_')}`
+  }
+</script>
+<script>
+  function steer(orginObj, orginList) {
+    var list = [];
+    try {
+      var obj = {};
+      var tags = orginObj && typeof (orginObj.tags) === 'string' ? orginObj.tags.replace(/\s/g, "").split(',') : '';
+      tags.forEach(item => {
+        if (!obj.hasOwnProperty(item)) {
+          obj[item] = true;
+        }
+      })
+      if (orginList instanceof Array) {
+        list = orginList.filter(item => item.id != orginObj.id);
+      }
+      list.forEach(item => {
+        if (item && typeof (item.tags) === 'string') {
+          let tagArr = item.tags.replace(/\s/g, "").split(',');
+          let len = 0;
+
+          tagArr.forEach(subItem => {
+            if (obj.hasOwnProperty(subItem)) {
+              ++len;
+            }
+          })
+          item.tagLen = len
+        }
+      })
+      list.sort(function (a, b) {
+        if (a && b) {
+          return b.tagLen - a.tagLen
+        }
+        return true;
+      })
+    } catch (error) { }
+    return list;
+  }
+</script>
 
 </html>
